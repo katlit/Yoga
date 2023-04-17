@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14ccad">
+    <meta name="google-site-verification" content="vntKuItOuM0jCZqa25Qrqx7vHUdg8tv4Qr0vHo1gam0" />
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/fitindian/desktop/img/favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
+    <script src="/bower_components/material-design-lite/material.min.js"></script>
+    <title>Check Your BMI</title>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+    <!-- Latest compiled and minified JavaScript -->
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <link href="/bower_components/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet">
+    <!-- <script src="https://use.fontawesome.com/9412f84a99.js"></script> -->
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/mobile/checkbox.css">
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111771514-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111771514-1');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152791062-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152791062-2');
+</script>
+
+    <script type='text/javascript'>
+		window.__lo_site_id = 147731;
+		(function() {
+			var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+			wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+		})();
+	</script>
+    <link rel="stylesheet" type="text/css" href="css/mobile/bmicheck.css">
+    <style type="text/css">
+    .disclaimer{
+        font-size: 10px;
+    }
+        input[type=number] {
+            -moz-appearance:textfield;
+        }
+    </style>
+<!-- Facebook Pixel Code -->
+<<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '220033386709601');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src=https://www.facebook.com/tr?id=220033386709601&ev=PageView&noscript=1
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+
+<body style="">
+ <div class="landingPageImg">
+  <div class="landingPageBackground">
+    <div class="landingPage row" id="landingPage" style="display: block; position: absolute;top: 0;left: 0;right: 0;bottom: 0; ">
+        <div class="header" style="">
+            <div class="header" style=" padding: 10px; ">
+                <h1 class="col-xs-6"><img src="https://res.cloudinary.com/fitindian/mobile/img/tfilogo.png" width="160px;"></h1>
+                <a href="/login" style="color: #fff;"><h4 class="col-xs-6" style="text-align: right;padding-top: 15px;">Login</h4></a>
+            </div>
+        </div>
+        <div class="col-xs-12 text-center">
+            <div class="text-center" style=" color: #fff;  font-size: 20px; padding-top: 25vh; padding-bottom: 50px;">
+                <!-- <p>Don't lose your</p>
+                <p>Sleep over your</p>
+                <span style="color: #ffcd40;"> <p>health,</p></span>
+                <p>Just stay <span style="color: #ffcd40;">healthy</span></p> -->
+                <p>Start choosing <span style="color: #ffcd40;"> health</span> </p>
+                <p>Not losing it!</p>
+                <input class="checkScore text-center" type="submit" name="" value="CHECK YOUR SCORE" id="checkScore" style="">
+            </div>
+        </div>
+    </div>
+    <div class="content" id="content" style="display: none; padding-bottom: 30px;">
+        <div class="header row" style="">
+            <div class="header" style=" padding: 10px; ">
+                <h1 class="col-xs-6"><img src="https://res.cloudinary.com/fitindian/mobile/img/tfilogo.png" width="160px;"></h1>
+                <a href="/login" style="text-decoration: none; color: #fff;">
+                <h4 class="col-xs-6" style="text-align: right;padding-top: 15px;">Login</h4>
+                </a>
+            </div>
+        </div>
+        <div class="gender" style="padding-top: 15px;">
+            <p class="title text-center">GENDER</p>
+            <div class="gender-icons text-center">
+                <fieldset>
+                    <div class="radio-male">
+                    <label >
+                        <input id="radio-m"  name="radiogender" type="radio" value="male" required="true">
+                        <img src="https://res.cloudinary.com/fitindian/desktop/img/checkmale.png"></label>
+                    </div>
+                    <div class="radio-female">
+                    <label>
+                        <input id="radio-f"  name="radiogender" value="female" type="radio" required="true">
+                        <img src="https://res.cloudinary.com/fitindian/desktop/img/checkfemale.png"></label>
+                    </div>
+                    <div class="validation" id="genderValidation" style="display: none; color: #ffcd40;
+                    font-size: 12px;">
+                        <p style="font-size: 10px;">* Please select your gender</p>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center" style="padding: 20px 15px; ">
+                <div class="text-center" id="heightFt" style="">
+                    <label for="heightFeet">Height</label>
+                    <input class="text-center enterInputs" type="number"    id="heightFeet" maxlength="1"  onblur="return verifyHeight(event) " required="true"><span>ft</span>
+                    <label for="heightInch"></label>
+                    <input class="text-center enterInputs" type="number" id="heightInch" name=""  onblur="return verifyHeight(event) " required="true"><span>in</span>
+                    <input type="hidden" name="height" id="height">
+                </div>
+                <div id="heightFill" style="color: #ffcd40; font-size: 10px; padding-left: 5px;"></div>
+            </div>
+        </div>
+        <div class="row" style="padding: 20px 15px;">
+            <div class="col-xs-6 text-center">
+                <label class="" for="weight">Weight</label>
+
+                <input class="text-center enterInputs" type="number"  maxlength="3"  id="weight"  onblur="return verifyWeight(event) ">
+                <span>kg</span>
+                <div id="weightFill" style="color: #ffcd40; font-size: 10px;"></div>
+            </div>
+            <div class="col-xs-6 text-center">
+                <div class="">
+                    <label class="" for="age">Age</label>
+                    <input class="text-center enterInputs" type="number"  maxlength="2"  id="age"  onblur="return verifyAge(event)"><span>years</span>
+                </div>
+
+                <div id="ageFill" style="color: #ffcd40; font-size: 10px;"></div>
+            </div>
+        </div>
+        <p id="inputsValidation" style="color: #ffcd40;font-size: 12px; padding-left: 15px;"></p>
+
+        <div>
+            <fieldset>
+                <div class="row" style="padding-bottom: 20px;">
+                    <div class="col-xs-12 text-center">
+                        <p style="font-size: 18px;">Lifestyle</p>
+                    </div>
+                </div>
+                <div class="row f-12" style="padding-left: 15px;">
+                    <div class="col-xs-6" style="padding:0px">
+                        <div style="padding-bottom: 15px;">
+                            <input id="radio-1" class="radio-custom" name="radiolifestyle" value="Sedentary" type="radio">
+                            <label for="radio-1" class="radio-custom-label" data-toggle="tooltip" title="spend too much time sitting">Sedentary</label>
+                        </div>
+                        <div style="padding-bottom: 15px;">
+                            <input id="radio-2" class="radio-custom" name="radiolifestyle" value="LightlyActive" type="radio">
+                            <label for="radio-2" class="radio-custom-label" data-toggle="tooltip" title="1-2 days/week of physical activity">Lightly Active</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-6" style="padding:0px">
+                        <div style="padding-bottom: 15px;">
+                            <input id="radio-4" class="radio-custom" name="radiolifestyle" value="VeryActive" type="radio">
+                            <label for="radio-4" class="radio-custom-label" data-toggle="tooltip" title="6-7 days/week of physical activity">Very Active</label>
+                        </div>
+                        <div style="padding-bottom: 15px;">
+                            <input id="radio-5" class="radio-custom" name="radiolifestyle" value="ExtremelyActive" type="radio">
+                            <label for="radio-5" class="radio-custom-label" data-toggle="tooltip" title="2X physical activity per day">Athletic</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div style="padding-bottom: 15px;">
+                            <input id="radio-3" class="radio-custom" name="radiolifestyle" value="ModeratelyActive" type="radio">
+                            <label for="radio-3" class="radio-custom-label" data-toggle="tooltip" title="3-5 days/week of physical activity">Moderately Active</label>
+                        </div>
+                    </div>
+                    <div class="validation" id="lifestyleValidation" style="color:#ffcd40;display: none;font-size: 12px;">
+                        <p style="font-size: 10px;">* Please select Your Lifestyle</p>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="check text-center">
+                        <p class="btn" style="background-color: #14ccad; border-radius: 0px; margin-top: 50px;" onclick="calculateBmi()">CHECK</p>
+                    </div>
+                </div>
+                <p id="bmiCaution" style="font-size: 12px; padding: 5px;"></p>
+            </div>
+        </div>
+    </div>
+    <div class="bmiCard" id="bmiCard" style="display: none;  padding-top: 0px; margin: auto; width: 300px; padding-bottom: 30px;">
+        <div class="backArrow" id="backArrow" style="">
+            <span><i class="fa fa-arrow-left" aria-hidden="true" style="font-size: 17px;"></i></span>
+        </div>
+
+        <div class="row ">
+            <div class="col-xs-12 healthscore text-center">
+                <h4>Your health Score</h4>
+            </div>
+            <div class="col-xs-12 text-center" id="circles-1">
+                <div class="score" >
+                    <p id="healthScore"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center" style="padding-bottom: 20px; padding-top: 20px;">
+                <h4 style="font-size: 14px;">Your BMI: <span id="bmi-score"></span>  - <span id="bmi-tip"></span> </h4>
+                <!-- <div id="slider-4"></div> -->
+                <div style="position: relative;">
+                    <img src="https://res.cloudinary.com/fitindian/mobile/img/BMI300.png" style="margin-top: 20px;">
+                    <div id="bmiHandle" style="width: 35px;height: 35px;border-radius: 50%; background-color: #fff; border: 3px solid #14ccad; position: absolute; top: 12px; left: var(--finalBmi); color: #14ccad;padding-top: 5px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xs-12">
+                <div class="check text-center">
+                    <a href="/register" style="text-decoration: none; color: #fff;">
+                        <button class="btn signup" style="">Sign Up</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row risk-score" style="">
+            <div class="col-xs-12  risks" style="padding-bottom: 20px; color: #fff; ">
+                <h4 style="padding-bottom: 10px;padding-left: 10px;margin-top: 20px;">Possible Health Risks</h4>
+                <p id="noHealthRisks" style="font-size: 16px;padding-left: 25px;"></p>
+                <ul id="risksRepeat" style="line-height: 25px; padding-left: 0;">
+
+                </ul>
+                <p class="disclaimer" id="disclaimer"><strong>Disclaimer</strong> : The following predications are based on our scientific research and need not be true.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript">
+
+    $(function() {
+        $('#checkScore').click(function() {
+            $('#content').css('display', 'block');
+            $("#landingPage").css('display', 'none');
+        });
+    });
+    $(function() {
+        $("#backArrow").click(function() {
+            $('#content').css('display', 'block');
+            $("#bmiCard").css('display', 'none');
+        });
+    });
+
+    function calculateBmi() {
+
+
+        function saveData() {
+            if (document.getElementById('radio-m').checked) {
+                var gender = document.getElementById('radio-m').value;
+            }
+            if (document.getElementById('radio-f').checked) {
+                var gender = document.getElementById('radio-f').value;
+            }
+
+            var height = document.getElementById('height').value;
+
+            var weight = document.getElementById('weight').value;
+
+            var age = document.getElementById('age').value;
+
+            if (document.getElementById('radio-1').checked) {
+                var lifeStyle = document.getElementById('radio-1').value;
+            }
+            if (document.getElementById('radio-2').checked) {
+                var lifeStyle = document.getElementById('radio-2').value;
+            }
+            if (document.getElementById('radio-3').checked) {
+                var lifeStyle = document.getElementById('radio-3').value;
+            }
+            if (document.getElementById('radio-4').checked) {
+                var lifeStyle = document.getElementById('radio-4').value;
+            }
+            if (document.getElementById('radio-5').checked) {
+                var lifeStyle = document.getElementById('radio-5').value;
+            }
+
+
+            if (typeof(Storage) !== "undefined") {
+                try{
+                    localStorage.setItem('Gender', gender);
+                    localStorage.setItem('Height', height);
+                    localStorage.setItem('Weight', weight);
+                    localStorage.setItem('Age', age);
+                    localStorage.setItem('LifeStyle', lifeStyle);
+                }catch(e){
+                    console.log(e)
+                }
+            } else {
+                console.log('Sorry! No Web Storage support..');
+            }
+        }
+        saveData();
+
+        var heightFeetDummy = document.getElementById('heightFeet').value;
+          var heightFeet = heightFeetDummy+"'"
+          console.log(heightFeet);
+          var heightInch = document.getElementById('heightInch').value;
+           var height = heightFeet.concat(heightInch);
+          console.log(height);
+          document.getElementById('height').value = height;
+
+
+        var validmale = document.getElementById("radio-m").checked;
+        var validfemale = document.getElementById("radio-f").checked;
+        var valid_sedentary = document.getElementById('radio-1').checked;
+        var valid_lightlyactive = document.getElementById('radio-2').checked;
+        var valid_moderatelyactive = document.getElementById('radio-3').checked;
+        var valid_veryactive = document.getElementById('radio-4').checked;
+        var valid_extremelyactive = document.getElementById('radio-5').checked;
+        var finalBmi;
+        console.log("haii")
+        if (((validmale == true) || (validfemale == true)) && ((valid_sedentary == true) || (valid_lightlyactive == true) || (valid_moderatelyactive == true) || (valid_veryactive == true) || (valid_extremelyactive == true))) {
+
+
+            if (document.getElementById('radio-m').checked) {
+                var gender = document.getElementById('radio-m').value;
+                var genderVar = 4;
+                console.log(gender)
+            }
+            if (document.getElementById('radio-f').checked) {
+                var gender = document.getElementById('radio-f').value;
+                var genderVar = 3;
+                console.log(gender)
+            }
+
+            if (document.getElementById('radio-1').checked) {
+                var lifeStyle = document.getElementById('radio-1').value;
+            var lifestyleVar = 1;
+
+            }
+            if (document.getElementById('radio-2').checked) {
+                var lifeStyle = document.getElementById('radio-2').value;
+            var lifestyleVar = 2;
+
+            }
+            if (document.getElementById('radio-3').checked) {
+                var lifeStyle = document.getElementById('radio-3').value;
+            var lifestyleVar = 3;
+
+            }
+            if (document.getElementById('radio-4').checked) {
+                var lifeStyle = document.getElementById('radio-4').value;
+            var lifestyleVar = 4;
+
+            }
+            if (document.getElementById('radio-5').checked) {
+                var lifeStyle = document.getElementById('radio-5').value;
+                var lifestyleVar = 5;
+            }
+            console.log(lifeStyle)
+            var weight = document.getElementById('weight').value;
+            var age = document.getElementById('age').value;
+            var height = document.getElementById('height').value;
+            console.log(height)
+            console.log(weight)
+            console.log(age)
+
+            if(height.length > 0){
+                var feet =  height.toString().split("'")[0];
+                var inches =   height.toString().split("'")[1];
+                console.log(feet)
+                console.log(inches)
+                var heightCms = (feet*30) + (inches*2.54);
+            }
+            if((weight < 40)||( weight > 180) ){
+                $("#weight").val("");
+                document.getElementById('weightFill').innerHTML = "Please enter weight properly";
+            }
+            if( (!height) || (height < 40)||( height > 240) ){
+                $("#heightFeet").val("");
+                $("#heightInch").val("");
+                document.getElementById('heightFill').innerHTML = "Please enter height properly";
+            }
+            if((age < 10)||( age > 120) ){
+                $("#age").val("");
+                document.getElementById('ageFill').innerHTML = "Please enter age properly";
+            }
+            if((!heightFeet) || (!heightInch)){
+                document.getElementById('heightFill').innerHTML = "Please enter height";
+            }
+
+            if (weight > 40 &&  heightCms > 80 && age > 10 ){
+                var finalBmi = Math.round((weight / Math.pow(heightCms, 2)) * 10000);
+                if(finalBmi > 45 || finalBmi < 15){
+                    document.getElementById('bmiCaution').innerHTML = "Enter your details correctly.";
+                }
+                else{
+
+                    // var genderVar = 0;
+                    // var ageVar = 0;
+                    // var lifestyleVar = 0;
+                    // var bmiVar = 0;
+
+                    // if (age >= 12 && age <= 20) {
+                    //     var ageVar = 4;
+                    // }
+                    // if (age > 20 && age < 30) {
+                    //     var ageVar = 5;
+                    // }
+                    // if (age >= 30 && age <= 40) {
+                    //     var ageVar = 4;
+                    // }
+                    // if (age > 40 && age <= 70) {
+                    //     var ageVar = 3;
+                    // }
+                    // if (age > 70) {
+                    //     var ageVar = 2;
+                    // }
+
+                    // if (finalBmi >= 18.5 && finalBmi <= 25) {
+                    //     var bmiVar = 15;
+                    // }
+                    // if (finalBmi > 25) {
+                    //     var bmiVar = 5;
+                    // }
+                    // if (finalBmi < 18.5) {
+                    //     var bmiVar = 10;
+                    // }
+
+                    // var healthScore = ((genderVar + ageVar + lifestyleVar + bmiVar) / 29) * 75;
+                    // var finalScore = Math.floor(healthScore);
+
+                    console.log("bmi value")
+                    console.log(finalBmi)
+                    if((finalBmi <= 24.9) && (finalBmi > 15)){
+                    console.log("1")
+                    var healthScore = (finalBmi * 80)/24.9;
+                    var finalScore = Math.floor(healthScore);
+                    }
+                    else if((finalBmi > 24.9) && (finalBmi < 40)){
+                    console.log("2")
+
+                        var actualBmiDiff = finalBmi - 24.9;
+                        var belowIdealValue = 24.9 - actualBmiDiff;
+                        var healthScore = (belowIdealValue * 80)/24.9;
+                        var finalScore = Math.floor(healthScore);
+                    }
+
+                    $('#healthScore').html(finalScore);
+
+                        if (typeof(Storage) !== "undefined") {
+                            try {
+                                localStorage.setItem('BmiScore', finalBmi);
+                            } catch (e) {
+                                console.log(e)
+                            }
+                        } else {
+                            console.log('Sorry! No Web Storage support..');
+                        }
+                        document.getElementById('bmi-score').innerHTML = finalBmi;
+            if (finalBmi < 19) {
+                document.getElementById('bmi-tip').innerHTML = "You are too Underweight"
+            }
+            if (finalBmi >= 19 && finalBmi <= 24) {
+                document.getElementById('bmi-tip').innerHTML = "You are Normal"
+            }
+            if (finalBmi >= 25 && finalBmi <= 30) {
+                document.getElementById('bmi-tip').innerHTML = "You are Overweight"
+            }
+            if (finalBmi >= 31 && finalBmi <= 35) {
+                document.getElementById('bmi-tip').innerHTML = "You are Obese (Grade 1 Obesity)"
+            }
+            if (finalBmi >= 36 && finalBmi <= 40) {
+                document.getElementById('bmi-tip').innerHTML = "You are Obese (Grade 2 Obesity)."
+            }
+            if (finalBmi >= 41 && finalBmi <= 45) {
+                document.getElementById('bmi-tip').innerHTML = "You are Obese (Grade 3 Obesity)"
+            }
+                        var bmiHandleValue = ((finalBmi) * 6)-13;
+
+                        if( bmiHandleValue >= 300){}
+                            else{
+                        $('#bmiHandle').css('left', bmiHandleValue);
+                        document.getElementById("bmiHandle").innerHTML = finalBmi;
+                        }
+
+
+                    document.getElementById('bmiCaution').innerHTML = "";
+
+                        $.getJSON('/getHealthRisksForScore?score='+finalBmi+'&gender='+gender.toLowerCase(),function(response){
+                            console.log(response)
+                            $('#risksRepeat').html('');
+                            for (var i = 0; i < response.length; i++) {
+                                $('#risksRepeat').append('<li>'+response[i]+'</li>')
+                                console.log(response[i])
+                            }
+                            $("#bmiCard").css('display', 'block');
+                            $('#content').css('display', 'none');
+                            $("#noHealthRisks").html("")
+                                $("#disclaimer").css('display','block')
+                            if((finalBmi >= 20) && (finalBmi <= 24) ){
+                                $("#noHealthRisks").html("Congratulations! You are in recommended health range of body mass index and has low risk of diseases. Keep it up and join our diet programs for body toning and muscle building.")
+                                $("#disclaimer").css('display','none')
+                            }
+
+                        })
+
+                        // });
+                    }
+                    }
+
+                } else if ((validmale == false) && (validfemale == false)) {
+                    document.getElementById('genderValidation').style.display = "block";
+                } else if ((valid_sedentary == false) && (valid_lightlyactive == false) && (valid_moderatelyactive == false) && (valid_veryactive == false) && (valid_extremelyactive == false)) {
+                    document.getElementById('lifestyleValidation').style.display = 'block';
+                }
+
+                else {
+
+                    document.getElementById('inputsValidation').style.display = 'block';
+
+                }
+            }
+    </script>
+    <script type="text/javascript">
+    $('#radio-m').click(function() {
+        document.getElementById('genderValidation').style.display = 'none';
+    });
+    $('#radio-f').click(function() {
+        document.getElementById('genderValidation').style.display = 'none';
+    });
+    $('#radio-1').click(function() {
+        document.getElementById('lifestyleValidation').style.display = 'none';
+    });
+    $('#radio-2').click(function() {
+        document.getElementById('lifestyleValidation').style.display = 'none';
+    });
+    $('#radio-3').click(function() {
+        document.getElementById('lifestyleValidation').style.display = 'none';
+    });
+    $('#radio-4').click(function() {
+        document.getElementById('lifestyleValidation').style.display = 'none';
+    });
+    $('#radio-5').click(function() {
+        document.getElementById('lifestyleValidation').style.display = 'none';
+    });
+    </script>
+    <script type="text/javascript">
+    // function isNumberHeight(evt) {
+    //     console.log('entered')
+    //     evt = (evt) ? evt : window.event;
+    //     var charCode = (evt.which) ? evt.which : evt.keyCode;
+    //     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    //         document.getElementById('heightFill').innerHTML = "Numeric input please!";
+    //         return false;
+    //     }
+    //      if (document.getElementById('heightFeet').value != NaN) {
+    //          document.getElementById('heightFill').innerHTML = "";
+    //      }
+    //      if (document.getElementById('heightInch').value != NaN) {
+    //          document.getElementById('heightFill').innerHTML = "";
+    //      }
+    // }
+
+    function verifyHeight(evt) {
+        document.getElementById('heightFill').innerHTML = "";
+    }
+
+    // function isNumberWeight(evt) {
+    //     evt = (evt) ? evt : window.event;
+    //     var charCode = (evt.which) ? evt.which : evt.keyCode;
+    //     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    //         document.getElementById('weightFill').innerHTML = "Numeric input please!";
+    //         return false;
+    //     }
+    //     if (document.getElementById('weight').value != NaN) {
+    //         document.getElementById('weightFill').innerHTML = "";
+    //     }
+    // }
+
+    function verifyWeight(evt) {
+        document.getElementById('weightFill').innerHTML = "";
+    }
+
+    // function isNumberAge(evt) {
+    //     evt = (evt) ? evt : window.event;
+    //     var charCode = (evt.which) ? evt.which : evt.keyCode;
+    //     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    //         document.getElementById('ageFill').innerHTML = "Numeric input please!";
+    //         return false;
+    //     }
+    //     if (document.getElementById('age').value != NaN) {
+    //         document.getElementById('ageFill').innerHTML = "";
+    //     }
+    // }
+
+    function verifyAge(evt) {
+        document.getElementById('ageFill').innerHTML = "";
+    }
+
+
+    </script>
+    <script type="text/javascript">
+
+    $("#heightFeet").on('keyup', function(evt){
+
+        var feet = $('#heightFeet').val();
+        if( feet < 3 || feet > 8){
+          $(this).val("");
+          document.getElementById('heightFill').innerHTML = "Please enter feet value between 3 and 8.";
+        }
+        if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+          $("#heightInch").focus();
+        }
+    })
+    $("#heightInch").on('keyup', function(evt){
+
+        var inch = $('#heightInch').val();
+        if( (inch >= 12) || (inch < 0) ){
+          $(this).val("");
+          document.getElementById('heightFill').innerHTML = "Please enter inches value between 1 to 11.";
+
+       }
+    });
+    $("#heightFeet").keyup(function(){
+    if($(this).val().match("^[0-9]+$")){
+
+    }else{
+        $('#heightFeet').val("");
+        $('#heightFill').html("Numeric input please!");
+    }
+    })
+    $("#heightInch").keyup(function(){
+    if($(this).val() > 1){
+        $("#weight").focus();
+    }
+    if($(this).val().match("^[0-9]+$")){
+
+    }else{
+        $('#heightInch').val("");
+        $('#heightFill').html("Numeric input please!");
+    }
+    })
+    $("#weight").keyup(function(){
+    if($(this).val().match("^[0-9.]+$")){
+
+    }else{
+        $('#weight').val("");
+        $('#weightFill').html("Numeric input please!");
+    }
+    });
+    $("#age").keyup(function(){
+    if($(this).val().match("^[0-9]+$")){
+
+    }else{
+        $('#age').val("");
+        $('#ageFill').html("Numeric input please!");
+    }
+    });
+    $("#age").keyup(function(){
+      var age = $('#age').val();
+      var valid_sedentary = document.getElementById('radio-1').checked;
+        var valid_lightlyactive = document.getElementById('radio-2').checked;
+        var valid_moderatelyactive = document.getElementById('radio-3').checked;
+        var valid_veryactive = document.getElementById('radio-4').checked;
+        var valid_extremelyactive = document.getElementById('radio-5').checked;
+      if(age > 18){
+        // $(this).removeAttr("focus")
+        if( (valid_sedentary == true) || (valid_lightlyactive == true) || (valid_moderatelyactive == true) || (valid_veryactive == true) || (valid_extremelyactive == true)){
+
+        }else{
+            $("#age").blur();
+            $("#radio-1").prop("checked",true);
+        }
+      }
+      if(age >120){
+        $(this).val("");
+
+        document.getElementById('ageFill').innerHTML = "Please enter valid data";
+      }
+    });
+
+    $("#weight").keyup(function(){
+      var weight = $('#weight').val();
+      if(weight > 40){
+        $("#age").focus();
+      }
+      if(weight >180){
+        $(this).val("");
+
+        document.getElementById('weightFill').innerHTML = "Please enter valid data";
+      }
+    });
+
+    $('[data-toggle="tooltip"]').tooltip({
+        html:true
+    });
+
+
+
+    </script>
+</body>
+</html>
